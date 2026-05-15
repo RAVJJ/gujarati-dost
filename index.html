@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ગુજરાતી દોસ્ત - Gujarati Dost | Interactive Language Learning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <h1>ગુજરાતી દોસ્ત</h1>
+                <p>Gujarati Dost</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#learning">Learn</a></li>
+                <li><a href="#practice">Practice</a></li>
+                <li><a href="#interactive">Games</a></li>
+                <li><a href="#writing">Writing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2>Welcome to ગુજરાતી દોસ્ત</h2>
+                <p>Your Interactive Gujarati Language Coach for All Ages</p>
+                <p class="subtitle">Learn, Practice, and Master the Beautiful Language of Gujarat 🌟</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('learning').scrollIntoView({behavior: 'smooth'})">Start Learning</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('practice').scrollIntoView({behavior: 'smooth'})">Take a Quiz</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-box box-1">🔤</div>
+                <div class="floating-box box-2">📚</div>
+                <div class="floating-box box-3">🎯</div>
+                <div class="floating-box box-4">🎮</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-card">
+                <h3>10,000+</h3>
+                <p>Active Learners</p>
+            </div>
+            <div class="stat-card">
+                <h3>500+</h3>
+                <p>Words & Phrases</p>
+            </div>
+            <div class="stat-card">
+                <h3>100+</h3>
+                <p>Lessons</p>
+            </div>
+            <div class="stat-card">
+                <h3>24/7</h3>
+                <p>Online Access</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Sections -->
+    <section id="learning" class="learning-hub">
+        <div class="container">
+            <h2>📚 Learning Sections</h2>
+            <p class="section-subtitle">Choose your learning path and start mastering Gujarati</p>
+            
+            <div class="learning-grid">
+                <!-- Section 1: Basics -->
+                <div class="learning-card">
+                    <div class="card-icon">🔤</div>
+                    <h3>મૂળ ભાષા શીખવું</h3>
+                    <h4>(Basics & Alphabet)</h4>
+                    <ul>
+                        <li>✓ Gujarati Script</li>
+                        <li>✓ Alphabet (અ-ઞ)</li>
+                        <li>✓ Vowels & Consonants</li>
+                        <li>✓ Basic Words</li>
+                        <li>✓ Pronunciation Guide</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="startLesson('basics')">Start Lesson</button>
+                </div>
+
+                <!-- Section 2: Vocabulary -->
+                <div class="learning-card">
+                    <div class="card-icon">📖</div>
+                    <h3>શબ્દકોષ</h3>
+                    <h4>(Vocabulary)</h4>
+                    <ul>
+                        <li>✓ Everyday Words</li>
+                        <li>✓ Family Members</li>
+                        <li>✓ Colors & Shapes</li>
+                        <li>✓ Numbers (1-100)</li>
+                        <li>✓ Common Phrases</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="startLesson('vocabulary')">Start Lesson</button>
+                </div>
+
+                <!-- Section 3: Grammar -->
+                <div class="learning-card">
+                    <div class="card-icon">📝</div>
+                    <h3>વ્યાકરણ</h3>
+                    <h4>(Grammar)</h4>
+                    <ul>
+                        <li>✓ Verb Conjugation</li>
+                        <li>✓ Tense & Mood</li>
+                        <li>✓ Cases & Genders</li>
+                        <li>✓ Sentence Structure</li>
+                        <li>✓ Common Patterns</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="startLesson('grammar')">Start Lesson</button>
+                </div>
+
+                <!-- Section 4: Conversations -->
+                <div class="learning-card">
+                    <div class="card-icon">💬</div>
+                    <h3>વાતચીત</h3>
+                    <h4>(Conversations)</h4>
+                    <ul>
+                        <li>✓ Greetings & Politeness</li>
+                        <li>✓ Daily Conversations</li>
+                        <li>✓ Travel Phrases</li>
+                        <li>✓ Formal & Informal</li>
+                        <li>✓ Real Scenarios</li>
+                    </ul>
+                    <button class="btn btn-small" onclick="startLesson('conversations')">Start Lesson</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Writing Help Section -->
+    <section id="writing" class="writing-help">
+        <div class="container">
+            <h2>✍️ Writing Help & Improvement</h2>
+            <p class="section-subtitle">Enhance your Gujarati writing skills</p>
+            
+            <div class="writing-tools">
+                <div class="tool-box">
+                    <h3>🔍 લેખન સુધારણા</h3>
+                    <h4>(Writing Correction)</h4>
+                    <p>Submit your Gujarati text and get instant feedback on grammar, spelling, and style.</p>
+                    <textarea id="writingInput" placeholder="Enter your Gujarati text here..." rows="6"></textarea>
+                    <button class="btn btn-primary" onclick="checkWriting()">Check My Writing</button>
+                    <div id="writingFeedback" class="feedback"></div>
+                </div>
+
+                <div class="tool-box">
+                    <h3>⚠️ સામાન્ય ભૂલો</h3>
+                    <h4>(Common Mistakes)</h4>
+                    <ul class="mistakes-list">
+                        <li><strong>નો vs નું:</strong> Use નો for masculine, નું for neuter nouns</li>
+                        <li><strong>છે vs હોય:</strong> છે for present tense, હોય for subjunctive</li>
+                        <li><strong>અને vs તથા:</strong> અને is informal, તથા is formal conjunction</li>
+                        <li><strong>આ vs એ:</strong> આ for "this" (near), એ for "that" (far)</li>
+                        <li><strong>જ vs જ કે:</strong> જ emphasizes, જ કે means "only if"</li>
+                    </ul>
+                </div>
+
+                <div class="tool-box">
+                    <h3>📋 શૈલી માર્ગદર્શન</h3>
+                    <h4>(Style Guide)</h4>
+                    <ul class="style-guide">
+                        <li><strong>Formal Writing:</strong> Use તમે instead of તું, તથા instead of અને</li>
+                        <li><strong>Informal:</strong> Use તું, જે, અને for friendly tone</li>
+                        <li><strong>Business:</strong> Maintain professional vocabulary and structure</li>
+                        <li><strong>Poetry:</strong> Use rhythm, rhyme, and literary devices</li>
+                        <li><strong>Story:</strong> Create vivid descriptions with appropriate vocabulary</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice & Quiz Section -->
+    <section id="practice" class="practice-area">
+        <div class="container">
+            <h2>🎯 Practice & Quiz Areas</h2>
+            <p class="section-subtitle">Test your knowledge with interactive quizzes</p>
+            
+            <div class="quiz-types">
+                <div class="quiz-card">
+                    <h3>📚 શબ્દ પરીક્ષણ</h3>
+                    <h4>(Vocabulary Quiz)</h4>
+                    <p>Test your vocabulary knowledge with 10 questions.</p>
+                    <button class="btn btn-secondary" onclick="startVocabularyQuiz()">Start Quiz →</button>
+                </div>
+
+                <div class="quiz-card">
+                    <h3>🔊 ઉચ્ચારણ કસોટી</h3>
+                    <h4>(Pronunciation)</h4>
+                    <p>Practice pronunciation and listen to native speakers.</p>
+                    <button class="btn btn-secondary" onclick="startPronunciationQuiz()">Start Quiz →</button>
+                </div>
+
+                <div class="quiz-card">
+                    <h3>✍️ લેખન કસોટી</h3>
+                    <h4>(Writing Quiz)</h4>
+                    <p>Fill in the blanks and test your writing skills.</p>
+                    <button class="btn btn-secondary" onclick="startWritingQuiz()">Start Quiz →</button>
+                </div>
+
+                <div class="quiz-card">
+                    <h3>🎓 વ્યાકરણ પરીક્ષણ</h3>
+                    <h4>(Grammar Quiz)</h4>
+                    <p>Master grammar rules with multiple choice questions.</p>
+                    <button class="btn btn-secondary" onclick="startGrammarQuiz()">Start Quiz →</button>
+                </div>
+            </div>
+
+            <!-- Quiz Display Area -->
+            <div id="quizContainer" class="quiz-container hidden">
+                <div class="quiz-header">
+                    <h3 id="quizTitle">Quiz</h3>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="questionCounter">Question 1 of 5</p>
+                </div>
+                <div class="quiz-body">
+                    <p id="quizQuestion" class="quiz-question"></p>
+                    <div id="quizOptions" class="quiz-options"></div>
+                    <div id="quizFeedback" class="quiz-feedback hidden"></div>
+                </div>
+                <div class="quiz-footer">
+                    <button class="btn btn-secondary" onclick="nextQuestion()">Next →</button>
+                    <button class="btn btn-primary" onclick="endQuiz()">End Quiz</button>
+                </div>
+            </div>
+
+            <!-- Progress Tracker -->
+            <div class="progress-tracker">
+                <h3>📊 Your Progress</h3>
+                <div class="progress-items">
+                    <div class="progress-item">
+                        <span>Vocabulary Mastery</span>
+                        <div class="progress-bar-small">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                        <p>45%</p>
+                    </div>
+                    <div class="progress-item">
+                        <span>Grammar Skills</span>
+                        <div class="progress-bar-small">
+                            <div class="progress-fill" style="width: 60%"></div>
+                        </div>
+                        <p>60%</p>
+                    </div>
+                    <div class="progress-item">
+                        <span>Writing Proficiency</span>
+                        <div class="progress-bar-small">
+                            <div class="progress-fill" style="width: 35%"></div>
+                        </div>
+                        <p>35%</p>
+                    </div>
+                    <div class="progress-item">
+                        <span>Pronunciation</span>
+                        <div class="progress-bar-small">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                        <p>70%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Games Section -->
+    <section id="interactive" class="interactive-games">
+        <div class="container">
+            <h2>🎮 Interactive Learning Games</h2>
+            <p class="section-subtitle">Learn through fun and engaging games</p>
+
+            <div class="games-grid">
+                <!-- Flashcards Game -->
+                <div class="game-card">
+                    <h3>🎴 ફ્લેશકાર્ડ્સ</h3>
+                    <h4>(Flashcards)</h4>
+                    <p>Learn vocabulary with interactive flashcards.</p>
+                    <div class="flashcard-demo" onclick="flipCard(this)">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <p>પાણી</p>
+                                <p class="small">(Click to flip)</p>
+                            </div>
+                            <div class="flashcard-back">
+                                <p>Water</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-small" onclick="startFlashcards()">Learn with Flashcards</button>
+                </div>
+
+                <!-- Audio Guessing Game -->
+                <div class="game-card">
+                    <h3>🔊 ધ્વનિ અનુમાન</h3>
+                    <h4>(Audio Guessing)</h4>
+                    <p>Guess the word from audio pronunciation.</p>
+                    <button class="btn btn-small" onclick="playAudio()">🔊 Play Sound</button>
+                    <input type="text" placeholder="Type your answer..." id="audioGuess" class="game-input">
+                    <button class="btn btn-small" onclick="checkAudioAnswer()">Check Answer</button>
+                </div>
+
+                <!-- Color & Shape Game -->
+                <div class="game-card">
+                    <h3>🎨 રંગ અને આકૃતિ</h3>
+                    <h4>(Colors & Shapes)</h4>
+                    <p>Learn colors and shapes in Gujarati.</p>
+                    <div class="color-shapes">
+                        <div class="color-box" style="background: #FF6B6B;" title="લાલ (Red)">લાલ</div>
+                        <div class="color-box" style="background: #4ECDC4;" title="પીળો (Yellow)">પીળો</div>
+                        <div class="color-box" style="background: #FFD93D;" title="વાદળી (Blue)">વાદળી</div>
+                        <div class="color-box" style="background: #6BCB77;" title="લીલો (Green)">લીલો</div>
+                    </div>
+                    <button class="btn btn-small" onclick="startColorGame()">Play Game</button>
+                </div>
+
+                <!-- Cultural Insights -->
+                <div class="game-card">
+                    <h3>🏛️ સાંસ્કૃતિક અંતર્દૃષ્ટિ</h3>
+                    <h4>(Cultural Insights)</h4>
+                    <p>Explore Gujarati culture and traditions.</p>
+                    <ul class="cultural-list">
+                        <li>🎪 festivals: દિવાળી, હોળી, નવરાત્રી</li>
+                        <li>🍲 Food: ઢોસા, થપલા, ફાફડા</li>
+                        <li>🎭 Arts: ગરબા, ડાંડિયો રાસ</li>
+                        <li>👗 Attire: સાડી, ધોતી, લેશક</li>
+                    </ul>
+                </div>
+
+                <!-- Daily Useful Phrases -->
+                <div class="game-card">
+                    <h3>💬 સાધારણ કોણ</h3>
+                    <h4>(Daily Phrases)</h4>
+                    <p>Master everyday useful phrases.</p>
+                    <div class="phrases-list">
+                        <p><strong>નમસ્તે</strong> - Hello</p>
+                        <p><strong>તમે કેવા છો?</strong> - How are you?</p>
+                        <p><strong>ધન્યવાદ</strong> - Thank you</p>
+                        <p><strong>કૃપા કરીને</strong> - Please</p>
+                        <p><strong>માટે આપણે આવીશું</strong> - See you later</p>
+                    </div>
+                </div>
+
+                <!-- Conversation Simulator -->
+                <div class="game-card">
+                    <h3>🗣️ વાતચીત શીખો</h3>
+                    <h4>(Learn Conversations)</h4>
+                    <p>Practice real-world conversations.</p>
+                    <button class="btn btn-small" onclick="startConversation()">Start Conversation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Tips -->
+    <section class="learning-tips">
+        <div class="container">
+            <h2>💡 Learning Tips for Success</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>🎯 Be Consistent</h3>
+                    <p>Dedicate 15-30 minutes daily to learn Gujarati. Consistency is key to language mastery.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>🔊 Listen & Repeat</h3>
+                    <p>Practice pronunciation daily. Listen to native speakers and mimic their accent.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>📚 Read & Write</h3>
+                    <p>Read Gujarati texts and write regularly. Start with simple sentences and gradually increase complexity.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>🤝 Speak & Interact</h3>
+                    <p>Practice speaking with others. Join language groups or find language exchange partners.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>🎮 Make It Fun</h3>
+                    <p>Use games, music, and movies to learn. Learning should be enjoyable and engaging.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>📊 Track Progress</h3>
+                    <p>Monitor your progress regularly. Celebrate small wins and adjust your learning strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ગુજરાતી દોસ્ત</h4>
+                    <p>Your Interactive Gujarati Language Coach</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#learning">Learning Sections</a></li>
+                        <li><a href="#practice">Practice Quizzes</a></li>
+                        <li><a href="#interactive">Interactive Games</a></li>
+                        <li><a href="#writing">Writing Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" onclick="alert('Documentation coming soon!')">Documentation</a></li>
+                        <li><a href="#" onclick="alert('Contact: support@gujarati-dost.com')">Contact Us</a></li>
+                        <li><a href="#" onclick="alert('Follow us on social media!')">Follow Us</a></li>
+                        <li><a href="#" onclick="alert('Subscribe to newsletter!')">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Language</h4>
+                    <select onchange="changeLanguage(this.value)">
+                        <option value="gujarati">ગુજરાતી</option>
+                        <option value="english" selected>English</option>
+                        <option value="hindi">हिन्दी</option>
+                    </select>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gujarati Dost. All rights reserved. | Made with ❤️ for the Gujarati Community</p>
+                <p>આપણે ગુજરાતી ભાષા શીખીશું અને તેને જીવંત રાખીશું! | Together, let's keep Gujarati alive!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
